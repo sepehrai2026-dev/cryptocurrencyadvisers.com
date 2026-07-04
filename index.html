@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cryptocurrency Advisers — Expert Crypto Consulting & Strategy</title>
+<meta name="description" content="Professional cryptocurrency consulting services. Trading strategy, wallet security, token evaluation, regulatory guidance, and blockchain integration for businesses and individuals.">
+<meta name="keywords" content="cryptocurrency consulting, crypto trading strategy, wallet security, token evaluation, ICO advisory, blockchain integration, regulatory guidance">
+<meta property="og:title" content="Cryptocurrency Advisers — Expert Crypto Consulting & Strategy">
+<meta property="og:description" content="Professional cryptocurrency consulting services. Trading strategy, wallet security, token evaluation, regulatory guidance, and blockchain integration for businesses and individuals.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cryptocurrencyadvisers.com">
+<link rel="canonical" href="https://cryptocurrencyadvisers.com">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --accent:{{site.accentColor}};
+  --accent-light:{{site.accentLight}};
+  --accent-dark:{{site.accentDark}};
+  --bg:#0a0a0a;
+  --bg-card:#111111;
+  --bg-alt:#0e0e0e;
+  --text:#e8e8e8;
+  --text-secondary:#999999;
+  --text-muted:#555555;
+  --border:#222222;
+  --border-accent:#333333;
+}
+html{scroll-behavior:smooth}
+body{font-family:system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+
+/* --- Hide emoji placeholders --- */
+.nav-logo-icon,
+.service-icon{
+  position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0
+}
+
+/* --- Nav --- */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(10,10,10,0.85);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border)
+}
+.nav-inner{
+  max-width:1200px;margin:0 auto;padding:1rem 2rem;
+  display:flex;justify-content:space-between;align-items:center
+}
+.nav-brand{
+  color:var(--text);text-decoration:none;font-weight:700;font-size:1.05rem;
+  letter-spacing:-0.01em
+}
+.nav-links{display:flex;align-items:center;gap:2rem}
+.nav-links a{
+  color:var(--text-secondary);text-decoration:none;font-size:0.85rem;
+  font-weight:500;letter-spacing:0.02em;text-transform:uppercase;
+  transition:color 0.2s
+}
+.nav-links a:hover{color:var(--text)}
+.nav-cta{
+  color:var(--text) !important;
+  border:1px solid var(--border-accent);
+  padding:0.45rem 1.25rem;
+  transition:border-color 0.2s,color 0.2s
+}
+.nav-cta:hover{border-color:var(--accent) !important;color:var(--accent) !important}
+
+/* --- Hero --- */
+.hero{
+  min-height:100vh;display:flex;align-items:center;justify-content:center;
+  position:relative;padding:8rem 2rem 6rem;
+  background:var(--bg)
+}
+.hero::before{
+  content:'';position:absolute;top:0;left:0;right:0;bottom:0;
+  background:radial-gradient(ellipse 60% 50% at 50% 40%,rgba(255,255,255,0.02),transparent);
+  pointer-events:none
+}
+.hero-content{
+  max-width:800px;text-align:center;position:relative;z-index:1
+}
+.hero-label{
+  font-size:0.75rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:1.5rem
+}
+.hero-title{
+  font-size:clamp(1.75rem,4vw,2.75rem);font-weight:800;line-height:1.1;
+  letter-spacing:-0.03em;margin-bottom:1.5rem;color:var(--text)
+}
+.hero-sub{
+  font-size:1.1rem;color:var(--text-secondary);max-width:560px;margin:0 auto 2.5rem;
+  line-height:1.7
+}
+.hero-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.hero-fade{
+  position:absolute;bottom:0;left:0;right:0;height:120px;
+  background:linear-gradient(to bottom,transparent,var(--bg));pointer-events:none
+}
+
+/* --- Buttons --- */
+.btn{
+  display:inline-block;padding:0.8rem 2rem;font-size:0.9rem;font-weight:600;
+  text-decoration:none;border-radius:0;letter-spacing:0.02em;
+  transition:all 0.25s ease;cursor:pointer;font-family:inherit
+}
+.btn-primary{
+  background:transparent;color:var(--text);border:1px solid var(--border-accent)
+}
+.btn-primary:hover{
+  border-color:var(--accent);color:var(--accent);background:rgba(255,255,255,0.02)
+}
+.btn-outline{
+  background:transparent;color:var(--text-secondary);border:1px solid var(--border)
+}
+.btn-outline:hover{color:var(--text);border-color:var(--text-muted)}
+
+/* --- Layout --- */
+.container{max-width:1200px;margin:0 auto;padding:0 2rem}
+.section{padding:5rem 0}
+
+/* --- Section headers --- */
+.section-header{margin-bottom:3.5rem;text-align:center}
+.section-title{
+  font-size:1.5rem;font-weight:700;letter-spacing:-0.02em;
+  margin-bottom:1rem
+}
+.section-rule{
+  width:40px;height:1px;background:var(--accent);margin:0 auto
+}
+.section-sub{
+  color:var(--text-secondary);font-size:0.95rem;margin-top:1.25rem;
+  max-width:500px;margin-left:auto;margin-right:auto
+}
+
+/* --- Service grid --- */
+.service-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0;
+  border:1px solid var(--border);counter-reset:service-counter
+}
+.service-card{
+  background:var(--bg-card);border:1px solid var(--border);
+  padding:2.5rem 2rem;position:relative;
+  transition:background 0.3s ease;counter-increment:service-counter;
+  margin:-1px 0 0 -1px
+}
+.service-card:hover{background:#161616}
+.service-num{
+  font-size:0.75rem;font-weight:600;color:var(--accent);
+  letter-spacing:0.05em;margin-bottom:1.25rem;display:block
+}
+.service-num::before{
+  content:counter(service-counter, decimal-leading-zero)
+}
+.service-name{
+  font-size:1.05rem;font-weight:700;margin-bottom:0.75rem;
+  letter-spacing:-0.01em;color:var(--text)
+}
+.service-desc{
+  font-size:0.88rem;color:var(--text-secondary);line-height:1.65
+}
+
+/* --- About --- */
+.about{border-top:1px solid var(--border)}
+.about-body{max-width:720px;margin:0 auto}
+.about-content{
+  font-size:0.95rem;color:var(--text-secondary);line-height:1.8
+}
+.about-content h3{
+  color:var(--text);font-size:1.1rem;font-weight:700;
+  margin:2.5rem 0 0.75rem;letter-spacing:-0.01em
+}
+.about-content p{margin-bottom:1.25rem}
+.about-content strong{color:var(--text);font-weight:600}
+.about-content ul,.about-content ol{
+  margin:0.75rem 0 1.25rem 1.25rem;color:var(--text-secondary)
+}
+.about-content li{margin-bottom:0.4rem;line-height:1.7}
+
+/* --- Contact --- */
+.contact{border-top:1px solid var(--border);background:var(--bg-alt)}
+.contact-form{max-width:640px;margin:0 auto}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.form-group{margin-bottom:1.5rem}
+.form-group label{
+  display:block;font-size:0.75rem;font-weight:600;
+  letter-spacing:0.06em;text-transform:uppercase;
+  margin-bottom:0.5rem;color:var(--text-muted)
+}
+.form-group input,
+.form-group textarea{
+  width:100%;padding:0.85rem 1rem;
+  border:1px solid var(--border);border-radius:0;
+  font-size:0.9rem;background:var(--bg);color:var(--text);
+  font-family:inherit;transition:border-color 0.2s
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder{color:var(--text-muted)}
+.form-group input:focus,
+.form-group textarea:focus{outline:none;border-color:var(--accent)}
+.form-btn{
+  width:100%;padding:0.9rem;background:transparent;color:var(--text);
+  border:1px solid var(--border-accent);border-radius:0;
+  font-size:0.9rem;font-weight:600;cursor:pointer;
+  letter-spacing:0.02em;transition:all 0.25s ease
+}
+.form-btn:hover{border-color:var(--accent);color:var(--accent)}
+
+/* --- Footer --- */
+.footer{
+  border-top:1px solid var(--border);padding:3rem 0;background:var(--bg)
+}
+.footer-inner{
+  display:flex;justify-content:space-between;align-items:center;
+  margin-bottom:2rem
+}
+.footer-brand{font-weight:700;font-size:0.95rem;color:var(--text)}
+.footer-links a{
+  color:var(--text-muted);text-decoration:none;font-size:0.8rem;
+  letter-spacing:0.02em;transition:color 0.2s
+}
+.footer-links a:hover{color:var(--text-secondary)}
+.footer-bottom p{
+  font-size:0.72rem;color:var(--text-muted);text-align:center;
+  line-height:1.6
+}
+
+/* --- Nav scroll state --- */
+.nav-scrolled{background:rgba(10,10,10,0.95);border-bottom-color:var(--border-accent)}
+
+/* --- Section fade-in --- */
+.section{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease}
+.section.visible{opacity:1;transform:translateY(0)}
+
+/* --- Responsive --- */
+@media(max-width:768px){
+  .nav-inner{padding:1rem 1.25rem}
+  .nav-links a:not(.nav-cta){display:none}
+  .hero{min-height:auto;padding:7rem 1.25rem 5rem}
+  .container{padding:0 1.25rem}
+  .section{padding:4rem 0}
+  .form-row{grid-template-columns:1fr}
+  .service-grid{grid-template-columns:1fr}
+  .footer-inner{flex-direction:column;gap:1rem;text-align:center}
+}
+
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand"><span class="nav-logo-icon" aria-hidden="true">💹</span>Cryptocurrency Advisers</a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact" class="nav-cta">Get in Touch</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-content">
+    <div class="hero-label">Cryptocurrency Advisers</div>
+    <h1 class="hero-title">Expert cryptocurrency consulting you can trust</h1>
+    <p class="hero-sub">From trading strategy to regulatory compliance, our advisers help you make informed decisions in the fast-moving cryptocurrency market.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn btn-primary">Get in Touch</a>
+      <a href="#services" class="btn btn-outline">View Services</a>
+    </div>
+  </div>
+  <div class="hero-fade"></div>
+</header>
+
+<main>
+  <section class="section services" id="services">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Consulting Services</h2>
+        <div class="section-rule"></div>
+      </div>
+      <div class="service-grid">
+        <div class="service-card">
+  <span class="service-icon" aria-hidden="true">📈</span>
+  <span class="service-num"></span>
+  <div class="service-name">Trading Strategy</div>
+  <div class="service-desc">Data-driven trading frameworks including technical analysis, market timing, position sizing, and risk management for active cryptocurrency traders.</div>
+</div>
+
+<div class="service-card">
+  <span class="service-icon" aria-hidden="true">🔒</span>
+  <span class="service-num"></span>
+  <div class="service-name">Wallet Security</div>
+  <div class="service-desc">Comprehensive security audits of your crypto storage, hardware wallet setup, multi-signature configurations, and best practices for protecting your digital assets.</div>
+</div>
+
+<div class="service-card">
+  <span class="service-icon" aria-hidden="true">🪙</span>
+  <span class="service-num"></span>
+  <div class="service-name">Token Evaluation</div>
+  <div class="service-desc">Rigorous fundamental analysis of cryptocurrency tokens including tokenomics review, team assessment, technology audit, and market positioning evaluation.</div>
+</div>
+
+<div class="service-card">
+  <span class="service-icon" aria-hidden="true">⚖️</span>
+  <span class="service-num"></span>
+  <div class="service-name">Regulatory Guidance</div>
+  <div class="service-desc">Navigate the evolving regulatory landscape with clarity. We help you understand compliance obligations, licensing requirements, and reporting standards.</div>
+</div>
+
+<div class="service-card">
+  <span class="service-icon" aria-hidden="true">🚀</span>
+  <span class="service-num"></span>
+  <div class="service-name">ICO Advisory</div>
+  <div class="service-desc">End-to-end advisory for token launches including token design, legal structuring, marketing strategy, and post-launch community management.</div>
+</div>
+
+<div class="service-card">
+  <span class="service-icon" aria-hidden="true">⛓️</span>
+  <span class="service-num"></span>
+  <div class="service-name">Blockchain Integration</div>
+  <div class="service-desc">Strategic guidance for businesses looking to integrate blockchain technology into operations, from supply chain to payments and beyond.</div>
+</div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">About Cryptocurrency Advisers</h2>
+        <div class="section-rule"></div>
+      </div>
+      <div class="about-body">
+        <div class="about-content"><h3>Practical Expertise, Not Hype</h3><p>Cryptocurrency Advisers was founded on the principle that sound crypto strategy requires clear thinking, not speculation. We cut through the noise to deliver actionable guidance grounded in market fundamentals and technical analysis.</p><h3>Comprehensive Crypto Support</h3><p>Our consulting covers the full spectrum of cryptocurrency needs, from securing your first wallet to evaluating complex token offerings and navigating the regulatory landscape. We meet clients where they are and guide them forward.</p><h3>Security as a Foundation</h3><p>In an industry where security breaches cost billions annually, we prioritize protecting your assets above all else. Every strategy we recommend starts with a robust security framework.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Let's Talk Crypto</h2>
+        <div class="section-rule"></div>
+        <p class="section-sub">Reach out to discuss your cryptocurrency needs. Whether you are just getting started or looking to optimize existing holdings, we are here to help.</p>
+      </div>
+      <form class="contact-form" id="contact-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cf-name">Name</label>
+            <input type="text" id="cf-name" placeholder="Your name" required>
+          </div>
+          <div class="form-group">
+            <label for="cf-email">Email</label>
+            <input type="email" id="cf-email" placeholder="you@example.com" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="cf-message">Message</label>
+          <textarea id="cf-message" rows="5" placeholder="Tell us about your project..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary form-btn">Get in Touch</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <span class="footer-brand"><span class="nav-logo-icon" aria-hidden="true">💹</span>Cryptocurrency Advisers</span>
+      <div class="footer-links">
+        <a href="https://sepehr.ai" target="_blank" rel="noopener">sepehr.ai</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Cryptocurrency Advisers. All rights reserved. Cryptocurrency Advisers provides consulting and educational services only. Cryptocurrency markets are highly volatile and speculative. Nothing on this website constitutes financial, legal, or tax advice. Always conduct your own research and consult qualified professionals before making investment decisions.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const SITE_CONFIG = {"faqs":[{"q":"Do you manage crypto portfolios directly?","a":"We provide consulting and strategic guidance but do not directly manage or take custody of client funds. We help you develop strategies that you execute through your preferred platforms."},{"q":"What cryptocurrencies do you cover?","a":"We cover all major cryptocurrencies and can evaluate emerging tokens on request. Our analysis spans Bitcoin, Ethereum, and the broader altcoin market including DeFi and layer-2 protocols."},{"q":"How do I know if my wallet setup is secure?","a":"We offer security assessments that review your current storage setup, identify vulnerabilities, and recommend improvements. This includes hardware wallet configuration, backup procedures, and operational security practices."},{"q":"Can you help my business accept cryptocurrency payments?","a":"Yes. We advise on payment processor selection, wallet infrastructure, accounting integration, and compliance considerations for businesses looking to accept crypto payments."}],"accentColor":"#059669","accentLight":"#d1fae5","accentDark":"#047857","ctaText":"Get in Touch"};
+/* Nav scroll state */
+(function() {
+  const nav = document.getElementById('nav');
+  let ticking = false;
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      requestAnimationFrame(function() {
+        nav.classList.toggle('nav-scrolled', window.scrollY > 60);
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+})();
+
+/* Smooth scroll for anchor links */
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    var target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
+
+/* Intersection observer for section fade-in */
+(function() {
+  var sections = document.querySelectorAll('.section');
+  if (!('IntersectionObserver' in window)) {
+    sections.forEach(function(s) { s.classList.add('visible'); });
+    return;
+  }
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  sections.forEach(function(s) { observer.observe(s); });
+})();
+
+/* Contact form */
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  var btn = this.querySelector('.form-btn');
+  var orig = btn.textContent;
+  btn.textContent = 'Message sent';
+  btn.style.borderColor = 'var(--accent)';
+  btn.style.color = 'var(--accent)';
+  this.reset();
+  setTimeout(function() {
+    btn.textContent = orig;
+    btn.style.borderColor = '';
+    btn.style.color = '';
+  }, 3000);
+});
+
+
+</script>
+</body>
+</html>
